@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Experience 1",
+    "description": "Here goes the description of experience 2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ducimus voluptas aspernatur amet molestias soluta officia laboriosam fugiat aperiam, eum atque mayores nihil consequuntur inventore quaerat maxime? Animi, aperiam veniam!",
+    "image": "/images/experiences/image2.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Experience 2",
+    "description": "Here goes the description of experience 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ducimus voluptas aspernatur amet molestias soluta officia laboriosam fugiat aperiam, eum atque mayores nihil consequuntur inventore quaerat maxime? Animi, aperiam veniam!",
+    "image": "/images/experiences/image1.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Experience 3",
+    "description": "Here goes the description of experience 3. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ducimus voluptas aspernatur amet molestias soluta officia laboriosam fugiat aperiam, eum atque mayores nihil consequuntur inventore quaerat maxime? Animi, aperiam veniam!",
+    "image": "/images/experiences/image3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Experience 4",
+    "description": "Here goes the description of experience 4. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ducimus voluptas aspernatur amet molestias soluta officia laboriosam fugiat aperiam, eum atque mayores nihil consequuntur inventore quaerat maxime? Animi, aperiam veniam!",
+    "image": "/images/experiences/image5.jpg"
+  }
+]

@@ -1,1 +1,52 @@
 @import "tailwindcss";
+
+@theme {
+
+  --color-button: #80bdb4;
+  --color-button-text: #272d35;
+  --color-nav-bg: #31373e;
+  --color-nav-text: #ecf1f4;
+
+  --font-body: "IBM Plex Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+.navbar {
+  @apply bg-nav-bg text-nav-text;
+}
+
+.footer {
+  @apply bg-nav-bg text-nav-text;
+}
+
+.button {
+  @apply bg-button text-button-text border border-button px-4 py-2 rounded-md font-body hover:opacity-90;
+}
+
+/*link con underline Nabbar */
+.nav-link {
+  position: relative;
+  color: var(--color-nav-text);
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--color-button);
+}
+
+.nav-link .underline {
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-button);
+  transition: width 0.2s;
+}
+
+.nav-link:hover .underline {
+  width: 100%;
+}
