@@ -6,7 +6,7 @@
   --color-button-text: #272d35;
   --color-nav-bg: #31373e;
   --color-nav-text: #ecf1f4;
-
+  --color-main-bg: #eaf1ef;
   --font-body: "IBM Plex Sans", sans-serif;
 }
 
@@ -22,9 +22,11 @@ body {
   @apply bg-nav-bg text-nav-text;
 }
 
-.button {
-  @apply bg-button text-button-text border border-button px-4 py-2 rounded-md font-body hover:opacity-90;
+.main-bg {
+  @apply bg-main-bg;
+  background-color: var(--color-main-bg)
 }
+
 
 /*link con underline Nabbar */
 .nav-link {
@@ -49,4 +51,196 @@ body {
 
 .nav-link:hover .underline {
   width: 100%;
+}
+
+/* Customized services form */
+.form-container {
+  position: relative;
+  width: 60%;
+  margin: 0 auto; 
+  margin-bottom: 1.5rem;
+}
+.form-container.double {
+  width: 100%; 
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem; 
+  width: 60%; 
+  margin: 0 auto; 
+}
+
+.form-row .form-container {
+  width: 100%; 
+  flex: 1; 
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  border-radius: 0.8rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  padding: 1.25rem 0.75rem 0.5rem 0.75rem;
+  color: #111827;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  /* margin-top: 1rem; */
+}
+
+.form-input::placeholder {
+  color: transparent;
+  font-weight: bold;
+}
+
+.form-input:focus {
+  border-color:#80bdb4;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-label {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.625rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  background-color: white;
+  padding: 0 0.25rem;
+}
+
+.form-input:placeholder-shown + .form-label {
+  top: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000000;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  top: 0.425rem;
+  font-size: 0.575rem;
+  color: #9ca3af;
+  font-weight: 300;
+}
+
+.phone-input-container{ 
+  position:relative;
+  width:100%;
+  margin-bottom: 1.5rem;
+}
+
+.phone-input-field {
+  width: 100% !important; 
+  padding-left: 1rem;    
+  border-radius: 0.8rem !important; 
+  padding: 1.7rem 0rem 1.6rem 1rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out !important;
+  outline: none;
+  /* line-height: normal !important; */
+  line-height: 1.8rem !important;
+  display:block;
+  color: #111827;
+} 
+
+.phoneInput {
+  position: relative;
+}
+
+.phone-label {
+  position: absolute;
+  top: 1rem; 
+  left: 3rem;
+  transform: translateY(0);
+  color: #000;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  font-size: 1rem; 
+  font-weight: 700;
+  background-color: white;
+  padding: 0rem 0.2rem 0rem;
+}
+
+.phoneInput:focus-within .phone-label {
+  top: 0.425rem;
+  font-size: 0.575rem; 
+  color: #9ca3af; 
+  font-weight: 300; 
+}
+
+.phoneInput:focus-within .phone-label .bold {
+  color: #9ca3af;
+  font-weight: 300;
+}
+
+.phoneInput .phone-label.filled {
+  top: 0.425rem;
+  font-size: 0.575rem;
+  color: #9ca3af;
+  font-weight: 300;
+}
+
+.phoneInput .phone-label.filled .bold {
+  color: #9ca3af;
+  font-weight: 300;
+}
+
+.phone-label .bold {
+  font-weight: 700;
+  color: #000;
+}
+
+.phone-label .light {
+  font-weight: 350;
+  color: #d1d5db;
+}
+
+.react-tel-input .flag-dropdown {
+  border-radius: 0.8rem 0rem 0rem 0.8rem !important;
+}
+
+.react-tel-input .selected-flag,
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus,
+.react-tel-input .flag-dropdown.open .selected-flag {
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.react-tel-input .country-list{
+  border: none !important;        
+  box-shadow: none !important;   
+  border-radius: 0 !important;    
+  background-color: white;  
+}
+
+.form-required {
+  color: #d1d5db;
+  font-weight: normal;
+}
+
+.form-button {
+  background-color: #80bdb4;
+  color: #272d35;           
+  padding: 0.5rem 2rem;      
+  border: none;              
+  border-radius: 0.8rem;  
+  cursor: pointer;           
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease; 
+}
+
+.form-button:hover {
+  background-color: #31373e;
+  color: #80bdb4;            
 }
