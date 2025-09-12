@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "name": "Mountain View Cabin",
+    "description": "Cozy cabin with stunning views of the mountains. Perfect for couples or small families.",
+    "capacity": 4,
+    "pricePerNight": 120,
+    "amenities": [
+      "WiFi",
+      "Kitchen",
+      "Fireplace",
+      "Mountain View",
+      "Smart TV",
+      "Free Parking",
+      "BBQ",
+      "Ping Pong Table",
+      "Board Games"
+    ],
+    "images": [
+      "/images/cabins/cabin1.jpg",
+      "/images/cabins/cabin1_2.jpg",
+      "/images/cabins/cabin1_3.jpg"
+    ],
+    "details": {
+      "about": "House in Las Vegas - Potrerillos. Ideal for families. Fully equipped for 6. Large windows with breathtaking views of the valley. Very quiet and perfect for hiking, climbing, or relaxing.",
+      "space": "The property has a privileged view. Living/dining room windows allow you to appreciate nature with different colors depending on the time of day.",
+      "rules": "Pets and events are not allowed.",
+      "surface": "150 m2",
+      "bedrooms": [
+        { "name": "Bedroom 1", "beds": "2 single beds" },
+        { "name": "Bedroom 2", "beds": "1 double bed" },
+        { "name": "Bedroom 3", "beds": "2 single beds, 2 bunk beds" }
+      ],
+      "location": "Las Vegas - Potrerillos, Mendoza, Argentina"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Lakefront Cabin",
+    "description": "Relax by the lake in this beautiful cabin with private deck and BBQ area.",
+    "capacity": 6,
+    "pricePerNight": 180,
+    "amenities": [
+      "WiFi",
+      "Kitchen",
+      "Lake View",
+      "BBQ",
+      "Deck",
+      "Smart TV",
+      "Private Dock",
+      "Free Parking"
+    ],
+    "images": [
+      "/images/cabins/cabin1.jpg",
+      "/images/cabins/cabin1.jpg",
+      "/images/cabins/cabin1.jpg"
+    ],
+    "details": {
+      "about": "Charming lakefront house in Potrerillos, perfect for families and groups. Private access to the lake and a spacious deck for unforgettable sunsets.",
+      "space": "Spacious interiors with rustic-modern design. The dining and living room open directly to the deck overlooking the lake.",
+      "rules": "No pets allowed. Events permitted with prior agreement.",
+      "surface": "180 m2",
+      "bedrooms": [
+        { "name": "Bedroom 1", "beds": "1 queen bed" },
+        { "name": "Bedroom 2", "beds": "1 double bed" },
+        { "name": "Bedroom 3", "beds": "2 single beds" }
+      ],
+      "location": "Lakefront, Potrerillos, Mendoza, Argentina"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Rustic Cabin Retreat",
+    "description": "Experience the charm of rustic living with modern comforts. Ideal for nature lovers.",
+    "capacity": 5,
+    "pricePerNight": 150,
+    "amenities": [
+      "WiFi",
+      "Kitchen",
+      "Fireplace",
+      "Hiking Trails Nearby",
+      "BBQ",
+      "Wood Stove",
+      "Outdoor Dining Area",
+      "Free Parking"
+    ],
+    "images": [
+      "/images/cabins/cabin1.jpg",
+      "/images/cabins/cabin1.jpg",
+      "/images/cabins/cabin1.jpg"
+    ],
+    "details": {
+      "about": "Rustic cabin in the heart of the mountains, surrounded by forest. A retreat for those who love nature and tranquility.",
+      "space": "Warm interiors with wooden finishes and a large fireplace. Outdoor space with BBQ and dining area under the trees.",
+      "rules": "Pets allowed with extra cleaning fee. No loud parties.",
+      "surface": "140 m2",
+      "bedrooms": [
+        { "name": "Bedroom 1", "beds": "1 double bed" },
+        { "name": "Bedroom 2", "beds": "1 single bed, 1 bunk bed" }
+      ],
+      "location": "Mountain trails, Potrerillos, Mendoza, Argentina"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Luxury Cabin",
+    "description": "Spacious luxury cabin with premium amenities, perfect for a special getaway.",
+    "capacity": 8,
+    "pricePerNight": 250,
+    "amenities": [
+      "WiFi",
+      "Kitchen",
+      "Hot Tub",
+      "Mountain View",
+      "Fireplace",
+      "Deck",
+      "Smart TV",
+      "Free Parking",
+      "Outdoor Lounge"
+    ],
+    "images": [
+      "/images/cabins/cabin1.jpg",
+      "/images/cabins/cabin1.jpg",
+      "/images/cabins/cabin1.jpg"
+    ],
+    "details": {
+      "about": "Exclusive luxury cabin in Potrerillos, designed for comfort and style. Perfect for families or groups seeking a premium experience.",
+      "space": "Spacious living room with panoramic windows. Modern kitchen fully equipped. Private deck with hot tub and mountain views.",
+      "rules": "No pets or smoking allowed. Quiet hours after 11 pm.",
+      "surface": "220 m2",
+      "bedrooms": [
+        { "name": "Bedroom 1", "beds": "1 king bed" },
+        { "name": "Bedroom 2", "beds": "1 queen bed" },
+        { "name": "Bedroom 3", "beds": "2 single beds" },
+        { "name": "Bedroom 4", "beds": "1 sofa bed" }
+      ],
+      "location": "Highlands of Potrerillos, Mendoza, Argentina"
+    }
+  }
+]
