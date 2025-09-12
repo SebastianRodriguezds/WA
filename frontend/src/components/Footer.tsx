@@ -26,8 +26,8 @@ export default function Footer() {
                         <a href="/contact" className="block hover:text-button transition-colors">
                             Mendoza, Argentina
                         </a>
-                        <a href="mailto:info@wine&andes.com" className="block hover:text-button transition-colors">
-                            info@wine&andes.com
+                        <a href="mailto:info@wineandes.com?subject=Consulta&body=Hola" className="block hover:text-button transition-colors">
+                            info@wineandes.com
                         </a>
                     </div>
 

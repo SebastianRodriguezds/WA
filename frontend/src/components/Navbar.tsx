@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -7,32 +8,35 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
  
           <div className="flex-shrink-0">
+            <Link href="/">
+
             <img
               className="h-10 w-auto"
               src="/logo.svg" 
               alt="W&A Experiences"
-            />
+              />
+              </Link>
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            <a href="#" className="nav-link">
+            <Link href="#" className="nav-link">
                 My Trip
                 <span className="underline"></span>
-            </a>
-            <a  
-              href="#"
+            </Link>
+            <Link 
+              href="/customized-services"
               className="nav-link"
             >
               Customized Services
               <span className="underline"></span>
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/what-we-offer"
               className="nav-link"
             >
               What We Offer
               <span className="underline"></span>
-            </a>
+            </Link>
             <a
               href="#"
               className="nav-link"
