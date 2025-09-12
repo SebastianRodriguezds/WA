@@ -20,10 +20,11 @@ export default function WhatWeOfferPage() {
     const [showCartButton, setShowCartButton] = useState(false);
     const [checkIn, setCheckIn] = useState<string>("");
     const [checkOut, setCheckOut] = useState<string>("");
-    const [guests, setGuests] = useState<{ adults: number; children: number; infants: number }>({
+    const [guests, setGuests] = useState<{ adults: number; children: number; infants: number, pets: number }>({
         adults: 1,
         children: 0,
         infants: 0,
+        pets: 0,
     });
 
     const openModal = (cabin: Cabin) => setSelectedCabin(cabin);
@@ -68,76 +69,9 @@ export default function WhatWeOfferPage() {
                             <div className="p-4">
                                 <h3 className="text-xl font-semibold mb-2">{cabin.name}</h3>
                                 
-                                <div className="mb-4 border p-4 rounded shadow-sm">
-                                    <p className="text-green-600 font-semibold mb-2">
-                                        ${selectedCabin?.pricePerNight} USD <span className="text-gray-600">/ night</span>
-                                    </p>
+                                
 
-                                    <div className="flex flex-col">
-                                        <label htmlFor="" className="text-sm font-medium">Check-in</label>
-                                        <input type="date"
-                                        value={checkIn}
-                                        className="border rounded p-2"
-                                        onChange={(e)=> setCheckIn(e.target.value)}
-                                        />
-                                    </div>
-
-                                    <div className="flex flex-col">
-                                        <label htmlFor="" className="text-sm font-medium">Check-out</label>
-                                        <input type="date"
-                                        value={checkOut}
-                                        className="border rounded p-2"
-                                        onChange={(e)=> setCheckOut(e.target.value)}
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="relative mb-2">
-                                 <label htmlFor="" className="text-sm font-medium">Guest</label>
-                                 <details className="border rounded p-2 cursor-pointer">
-                                    <summary className="list-none">
-                                        {guests.adults + guests.children + guests.infants} guests
-                                    </summary>
-                                    <div className="mt2 space-y-2">
-                                        {["adults", "childrens", "infants"].map((type)=>(
-                                            <div className="flex justify-between items-center" key={type}>
-                                                <span className="capitalize">{type}</span>
-                                                <div className="flex items-center gap-2">
-                                                    <button
-                                                        className="px-2 py-1 border rounded" 
-                                                        onClick={()=> 
-                                                            setGuests((prev)=> ({...prev, [type]: Math.max(prev[type as keyof typeof prev] - 1, 0)}))
-                                                        }
-                                                        >
-                                                       -
-                                                    </button>
-                                                    <span>{guests[type as keyof typeof guests]}</span>
-                                                    <button className="px-2 py-1 border rounded"
-                                                    onClick={()=>
-                                                        setGuests((prev) => ({...prev, [type]: prev[type as keyof typeof prev] + 1}))
-                                                    }
-                                                    >
-                                                        +
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                 </details>
-                                </div>
-
-                                {nights > 0 && (
-                                    <div className="mt-2 text-sm text-gray-700">
-                                        <p>${selectedCabin?.pricePerNight} USD x {nights} nights</p>
-                                        <p className="font-bold">Total: ${totalPrice} USD</p>
-                                        <p className="text-xs text-gray-500">
-                                            Check-in {checkIn} - Checkout {checkOut}
-                                        </p>
-                                        <p className="text-xs text-gray-500">
-                                            Guest: {guests.adults} adults, {guests.children} children, {guests.infants} infants
-                                        </p>
-                                    </div>
-                                )}
+                                
 
                                 <button 
                                     onClick={() => openModal(cabin)}
@@ -287,6 +221,85 @@ export default function WhatWeOfferPage() {
                         <p className="text-gray-500 mb-4 text-sm">Surface area: {selectedCabin.details?.surface}</p>
                         <p className="text-sm text-gray-500 mb-6">Location: {selectedCabin.details?.location}</p>
                         
+                        <div className="mb-4 border p-4 rounded shadow-sm">
+                                    <p className="text-green-600 font-semibold mb-2">
+                                        ${selectedCabin?.pricePerNight} USD <span className="text-gray-600">/ night</span>
+                                    </p>
+
+                                    <div className="flex flex-col">
+                                        <label htmlFor="" className="text-sm font-medium">Check-in</label>
+                                        <input type="date"
+                                        value={checkIn}
+                                        className="border rounded p-2"
+                                        onChange={(e)=> setCheckIn(e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className="flex flex-col">
+                                        <label htmlFor="" className="text-sm font-medium">Check-out</label>
+                                        <input type="date"
+                                        value={checkOut}
+                                        className="border rounded p-2"
+                                        onChange={(e)=> setCheckOut(e.target.value)}
+                                        />
+                                    </div>
+                                </div>        
+                        <div className="relative mb-2">
+                                 <label htmlFor="" className="text-sm font-medium mt-4">Guest</label>
+                                 <details className="border rounded p-2 cursor-pointer">
+                                    <summary className="list-none">
+                                        {guests.adults + guests.children + guests.infants + guests.pets} guests
+                                    </summary>
+                                    <div className="mt2 space-y-2">
+                                        {["adults", "children", "infants", "pets"].map((type)=>(
+                                            <div className="flex justify-between items-center" key={type}>
+                                                <span className="capitalize">{type}</span>
+                                                <div className="flex items-center gap-2">
+                                                    <button
+                                                        className="px-2 py-1 border rounded" 
+                                                        onClick={()=> 
+                                                            setGuests((prev)=> ({...prev, [type]: Math.max(prev[type as keyof typeof prev] - 1, 0)}))
+                                                        }
+                                                        >
+                                                       -
+                                                    </button>
+                                                    <span>{guests[type as keyof typeof guests]}</span>
+                                                    <button className="px-2 py-1 border rounded"
+                                                    onClick={()=>
+                                                        setGuests((prev) => ({...prev, [type]: prev[type as keyof typeof prev] + 1}))
+                                                    }
+                                                    >
+                                                        +
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        <div className="flex justify-end mt-2">
+                                            <button className="font-bold  underline px-3 py-2 rounded hover:bg-gray-300 transition"
+                                            onClick={(e)=> {
+                                                (e.target as HTMLElement).closest("details")!.removeAttribute("open");
+                                            }}
+                                            >
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                 </details>
+                                </div>
+
+                                {nights > 0 && (
+                                    <div className="mt-3 text-sm text-gray-700">
+                                        <p>${selectedCabin?.pricePerNight} USD x {nights} nights</p>
+                                        <p className="font-bold">Total: ${totalPrice} USD</p>
+                                        <p className="text-xs text-gray-500">
+                                            Check-in {checkIn} - Checkout {checkOut}
+                                        </p>
+                                        <p className="text-xs text-gray-500">
+                                            Guest: {guests.adults} adults, {guests.children} children, {guests.infants} infants
+                                        </p>
+                                    </div>
+                                )}
+
                         <button 
                             className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
                             onClick={() => addToCart(selectedCabin)}
