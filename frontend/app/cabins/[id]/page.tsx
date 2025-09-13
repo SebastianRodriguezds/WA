@@ -19,6 +19,7 @@ export default function CabinDetailPage({ params }: PageProps) {
 
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
+  const [error, setError] = useState("");
   const [guests, setGuests] = useState({
     adults: 1,
     children: 0,
@@ -41,6 +42,11 @@ export default function CabinDetailPage({ params }: PageProps) {
   const totalPrice = nights * (cabin?.pricePerNight || 0);
 
   const handleAddToCartAndContinue = () => {
+    if (nights===0){
+      setError("Please select your check-in and check-out dates before continuing.");
+      return;
+    }
+    setError("");
     addToCart({
       id: cabin.id,
       type: "cabin",
@@ -49,13 +55,15 @@ export default function CabinDetailPage({ params }: PageProps) {
       nights,
       guests,
     });
-    router.push("/what-we-offer")
+    router.push("/what-we-offer#experiences");
   };
 
   const guestSummary = Object.entries(guests)
   .filter(([_, count])=> count > 0)
   .map(([type, count]) => `${count} ${type}`)
   .join(", ");
+
+
 
   return (
     <div className="flex justify-center relative px-4 py-6">
@@ -65,16 +73,7 @@ export default function CabinDetailPage({ params }: PageProps) {
         ← Volver
       </button>
                     <div className="bg-white rounded-lg max-w-2xl w-full px-4 py-6 relative">                 
-                        <div className="grid grid-cols-2 gap-2 mb-4 h-66">
-                            <div>
-                                <img src={cabin.images[0]} alt={cabin.name} className="w-full h-66 object-cover rounded"
-                                />
-                            </div>
-                            <div className="grid grid-rows-2 gap-2">
-                                <img src={cabin.images[1] || cabin.images[0]} alt={`${cabin.name} extra`} className="w-full h-32 object-cover rounded" />
-                                <img src={cabin.images[2] || cabin.images[0]} alt={`${cabin.name} extra`} className="w-full h-32 object-cover rounded" />
-                            </div>
-                        </div>
+                        <ImageCarousel images={cabin.images} />
                         <h3 className="text-2xl font-bold mb-2">{cabin.name}</h3>
                         <p className="text-green-600 font-semibold mb-4">
                             From ${cabin.pricePerNight} / night
@@ -120,7 +119,10 @@ export default function CabinDetailPage({ params }: PageProps) {
                                         min={today}
                                         value={checkIn}
                                         className="border rounded p-2"
-                                        onChange={(e)=> setCheckIn(e.target.value)}
+                                        onChange={(e)=> {
+                                        setCheckIn(e.target.value);
+                                        setError("");  
+                                        }}
                                         />
                                     </div>
 
@@ -130,7 +132,9 @@ export default function CabinDetailPage({ params }: PageProps) {
                                         value={checkOut}
                                         min={checkIn ? checkIn : today}
                                         className="border rounded p-2"
-                                        onChange={(e)=> setCheckOut(e.target.value)}
+                                        onChange={(e)=>{ {setCheckOut(e.target.value)}
+                                        setError("");
+                                        }}
                                         />
                                     </div>
 
@@ -148,6 +152,7 @@ export default function CabinDetailPage({ params }: PageProps) {
                                     </summary>
                                     <div className="mt2 space-y-2">
                                         {["adults", "children", "infants", "pets"].map((type)=>(
+        
                                             <div className="flex justify-between items-center" key={type}>
                                                 <span className="capitalize">{type}</span>
                                                 <div className="flex items-center gap-2">
@@ -195,11 +200,18 @@ export default function CabinDetailPage({ params }: PageProps) {
                                         </p>
                                     </div>
                                 )}
+                        {error && (
+                          <p className="text-red-600 font-medium mt-2">{error}</p>
+                        )}
 
                         <button 
-                            className="w-full mt-4 bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+                            className={`w-full mt-4 py-2 rounded transition ${
+                              nights === 0
+                                ? "bg-gray-400 text-white cursor-not-allowed"
+                                : "bg-green-600 text-white hover:bg-green-700"
+                            }`}
                             onClick={handleAddToCartAndContinue}
-                            disabled={nights=== 0}
+                            
                         >
                             Add to basket and continue planning your adventure
                         </button>
