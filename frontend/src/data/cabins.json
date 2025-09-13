@@ -18,8 +18,8 @@
     ],
     "images": [
       "/images/cabins/cabin1.jpg",
-      "/images/cabins/cabin1_2.jpg",
-      "/images/cabins/cabin1_3.jpg"
+      "/images/cabins/cabin1.jpg",
+      "/images/cabins/cabin1.jpg"
     ],
     "details": {
       "about": "House in Las Vegas - Potrerillos. Ideal for families. Fully equipped for 6. Large windows with breathtaking views of the valley. Very quiet and perfect for hiking, climbing, or relaxing.",
@@ -31,7 +31,8 @@
         { "name": "Bedroom 2", "beds": "1 double bed" },
         { "name": "Bedroom 3", "beds": "2 single beds, 2 bunk beds" }
       ],
-      "location": "Las Vegas - Potrerillos, Mendoza, Argentina"
+      "location": "Las Vegas - Potrerillos, Mendoza, Argentina",
+      "petsAllowed": false
     }
   },
   {
@@ -52,8 +53,8 @@
     ],
     "images": [
       "/images/cabins/cabin1.jpg",
-      "/images/cabins/cabin1.jpg",
-      "/images/cabins/cabin1.jpg"
+      "/images/experiences/image3.jpg",
+      "/images/experiences/image2.jpg"
     ],
     "details": {
       "about": "Charming lakefront house in Potrerillos, perfect for families and groups. Private access to the lake and a spacious deck for unforgettable sunsets.",
@@ -65,7 +66,8 @@
         { "name": "Bedroom 2", "beds": "1 double bed" },
         { "name": "Bedroom 3", "beds": "2 single beds" }
       ],
-      "location": "Lakefront, Potrerillos, Mendoza, Argentina"
+      "location": "Lakefront, Potrerillos, Mendoza, Argentina",
+      "petsAllowed": false
     }
   },
   {
@@ -98,7 +100,8 @@
         { "name": "Bedroom 1", "beds": "1 double bed" },
         { "name": "Bedroom 2", "beds": "1 single bed, 1 bunk bed" }
       ],
-      "location": "Mountain trails, Potrerillos, Mendoza, Argentina"
+      "location": "Mountain trails, Potrerillos, Mendoza, Argentina",
+      "petsAllowed": true
     }
   },
   {
@@ -134,7 +137,8 @@
         { "name": "Bedroom 3", "beds": "2 single beds" },
         { "name": "Bedroom 4", "beds": "1 sofa bed" }
       ],
-      "location": "Highlands of Potrerillos, Mendoza, Argentina"
+      "location": "Highlands of Potrerillos, Mendoza, Argentina",
+      "petsAllowed": false
     }
   }
 ]
